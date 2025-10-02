@@ -1,0 +1,16 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="DESKTOP-NER5ACI_SQLPRINCIPAL.PlantAndHealth.user"
+  DTS:DTSID="{583A1BFB-B41D-42FD-BF60-A3B1AECB88B5}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=DESKTOP-NER5ACI\SQLPRINCIPAL;User ID=user;Initial Catalog=PlantAndHealth;Provider=MSOLEDBSQL.1;Application Name=SSIS-DW_PLANTA-{583A1BFB-B41D-42FD-BF60-A3B1AECB88B5}DESKTOP-NER5ACI\SQLPRINCIPAL.PlantAndHealth.user;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAEvytyL2VRE+CLp25qNzAUwAAAAACAAAAAAAQZgAAAAEAACAAAACWlwIJh27ESX89HiTh7m+eKcurgZPA/P4wOZ/xgm9efgAAAAAOgAAAAAIAACAAAAATabrC+hExXGWpC1+YBSDKiLJn3uotwpuvxNL1zFHwTXAAAADDTGcW4IPHGfkD2hkTjfwJT17QlOCiPju/Nj33BjFNUNRapmfW5L6Id4R18i+1+V01wwc8vVGgKV+2al3UmkVncEOVQAtASax3OF3y/mqGxFnFFny3PIbWVTaa/ZIe/wXY7iRQ7ETzLa0a83o4x1HYQAAAANp2avV13nQdjjzCEAwc561c8I6fxansLkdtLj58g9EO8N0iQ/rqbJwnUe2j7qekkCu7kNweN6uvj1yelUb+WKs=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

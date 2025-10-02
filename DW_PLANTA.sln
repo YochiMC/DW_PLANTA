@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36511.14 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "DW_PLANTA", "DW_PLANTA.dtproj", "{073B412A-9B3D-DBCA-8408-D5CDAF50B98A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{073B412A-9B3D-DBCA-8408-D5CDAF50B98A}.Development|Default.ActiveCfg = Development
+		{073B412A-9B3D-DBCA-8408-D5CDAF50B98A}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1A722E42-6611-449C-AF74-21F8FAF2420B}
+	EndGlobalSection
+EndGlobal

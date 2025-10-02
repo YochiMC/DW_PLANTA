@@ -1,0 +1,1930 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/1/2025 11:04:23 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-NER5ACI"
+  DTS:CreatorName="DESKTOP-NER5ACI\josep"
+  DTS:DTSID="{4D886283-3B97-4CFF-94B8-D2DB732A535D}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.2"
+  DTS:LocaleID="2058"
+  DTS:ObjectName="practica_2-3"
+  DTS:PackageType="5"
+  DTS:VersionBuild="42"
+  DTS:VersionGUID="{8DBC1E34-B294-4FA3-8AC5-3AE39CDD9A99}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Administrador de conexiones con Excel]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{64B8E37A-6FEB-41F3-B8F1-F5354E967D38}"
+      DTS:ObjectName="Administrador de conexiones con Excel">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=C:\Users\josep\source\repos\DW_PLANTA\archivos\nombres_productos.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-NER5ACI\SQLPRINCIPAL.DW_Planta.user]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{63D475FC-BEA6-4F6B-8D9C-68F13559B1E0}"
+      DTS:ObjectName="DESKTOP-NER5ACI\SQLPRINCIPAL.DW_Planta.user">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-NER5ACI\SQLPRINCIPAL;User ID=user;Initial Catalog=DW_Planta;TrustServerCertificate=True;Application Name=SSIS-practica_2-3-{63D475FC-BEA6-4F6B-8D9C-68F13559B1E0}DESKTOP-NER5ACI\SQLPRINCIPAL.DW_Planta.user;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAEvytyL2VRE+CLp25qNzAUwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADzRO6z51CKY4e3hyUMoHsg7JEe7eW/Vw+JRcOQFKCdKQAAAAAOgAAAAAIAACAAAAAffENlz4+y8s+u6R/G7W5PYiaTOK3g4C9Y1fRy8JkV0xAAAAA4yDR6c84P6PlV0ITZNpkNQAAAALKEUPSOXYKgBSXIDtCl+6AO82SijfRWXmQZS8aDEK3g8B2wzuM70qfLOHtOe2pYOpVwSIQOwPhcgU3Le3FWU4I</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-NER5ACI\SQLPRINCIPAL.DW_Planta.user1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F97343FC-3DD1-4329-8204-14593E99E956}"
+      DTS:ObjectName="DESKTOP-NER5ACI\SQLPRINCIPAL.DW_Planta.user1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-NER5ACI\SQLPRINCIPAL;User ID=user;Initial Catalog=DW_Planta;Provider=MSOLEDBSQL.1;Application Name=SSIS-practica_2-3-{F97343FC-3DD1-4329-8204-14593E99E956}DESKTOP-NER5ACI\SQLPRINCIPAL.DW_Planta.user1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAEvytyL2VRE+CLp25qNzAUwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAB5v6t37Ho+7m4bDTurDzun4Fsf/3F7mXX+th6YKAsCQAAAAAOgAAAAAIAACAAAADGxpL+A+ns2flVYft/Zuyzyi78ScAsj7oTnGVJQhK1FhAAAABXX8YfbBifvYnbtmobhP62QAAAADe/fPARYJXlz8zmXAyYYERNMuqw/6p+VrGa4FVtzp/+xMb8kGo54Yvh/VPEdbrH/1XIi0bpTT1wCcCJF+KFOlg</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{B06FF66C-5D41-4F2A-BE25-E515AE8E9D12}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2058"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\josep\source\repos\DW_PLANTA\archivos\contaditos.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="cantidad_venta"
+              DTS:DTSID="{4D7FDAAC-6B33-43FA-A83F-8E5F0DB29A0A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id_cliente"
+              DTS:DTSID="{E114923D-5E4D-468F-A11B-B8021F2F9B47}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\LIMPIAR_REGION"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{288B84CA-E523-45BE-A165-69A3620A9129}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="LIMPIAR_REGION"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F97343FC-3DD1-4329-8204-14593E99E956}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE D_Region" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\NOMBRE_PRODUCTO"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{AAC3DF10-E436-48D2-A333-BC6A2935D1D4}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="NOMBRE_PRODUCTO"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\NOMBRE_PRODUCTO\Conditional Split"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Conditional Split"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\NOMBRE_PRODUCTO\Conditional Split.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\NOMBRE_PRODUCTO\Conditional Split.Inputs[Conditional Split Input].Columns[edad]"
+                      cachedDataType="i2"
+                      cachedName="edad"
+                      lineageId="Package\NOMBRE_PRODUCTO\OLE DB Source.Outputs[OLE DB Source Output].Columns[edad]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\NOMBRE_PRODUCTO\Conditional Split.Outputs[Case 1]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Case 1"
+                  synchronousInputId="Package\NOMBRE_PRODUCTO\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">#{Package\NOMBRE_PRODUCTO\OLE DB Source.Outputs[OLE DB Source Output].Columns[edad]} &gt;= 50</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">edad &gt;= 50</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\NOMBRE_PRODUCTO\Conditional Split.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\NOMBRE_PRODUCTO\Conditional Split.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\NOMBRE_PRODUCTO\Conditional Split.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\NOMBRE_PRODUCTO\Conditional Split.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\NOMBRE_PRODUCTO\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\NOMBRE_PRODUCTO\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\NOMBRE_PRODUCTO\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\NOMBRE_PRODUCTO\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\NOMBRE_PRODUCTO\Excel Destination"
+              componentClassID="Microsoft.ExcelDestination"
+              contactInfo="Excel Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Excel Destination"
+              name="Excel Destination"
+              usesDispositions="true">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\NOMBRE_PRODUCTO\Excel Destination.Connections[OleDbConnection]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\NOMBRE_PRODUCTO\Excel Destination.Inputs[Excel Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Excel Destination Input">
+                  <externalMetadataColumns
+                    isUsed="True" />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\NOMBRE_PRODUCTO\Excel Destination.Outputs[Excel Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Excel Destination Error Output"
+                  synchronousInputId="Package\NOMBRE_PRODUCTO\Excel Destination.Inputs[Excel Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\NOMBRE_PRODUCTO\Excel Destination.Outputs[Excel Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\NOMBRE_PRODUCTO\Excel Destination.Outputs[Excel Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\NOMBRE_PRODUCTO\Excel Destination.Outputs[Excel Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\NOMBRE_PRODUCTO\Excel Destination.Outputs[Excel Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\NOMBRE_PRODUCTO\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT        dbo.D_Cliente.edad, dbo.D_Producto.nombre_producto
+FROM            dbo.D_Cliente INNER JOIN
+                         dbo.H_Venta ON dbo.D_Cliente.id_cliente = dbo.H_Venta.id_cliente INNER JOIN
+                         dbo.D_Producto ON dbo.H_Venta.id_producto = dbo.D_Producto.id_producto</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\NOMBRE_PRODUCTO\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-NER5ACI\SQLPRINCIPAL.DW_Planta.user1]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-NER5ACI\SQLPRINCIPAL.DW_Planta.user1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\NOMBRE_PRODUCTO\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\NOMBRE_PRODUCTO\OLE DB Source.Outputs[OLE DB Source Output].Columns[nombre_producto]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\NOMBRE_PRODUCTO\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[nombre_producto]"
+                      length="255"
+                      lineageId="Package\NOMBRE_PRODUCTO\OLE DB Source.Outputs[OLE DB Source Output].Columns[nombre_producto]"
+                      name="nombre_producto"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\NOMBRE_PRODUCTO\OLE DB Source.Outputs[OLE DB Source Output].Columns[edad]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\NOMBRE_PRODUCTO\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[edad]"
+                      lineageId="Package\NOMBRE_PRODUCTO\OLE DB Source.Outputs[OLE DB Source Output].Columns[edad]"
+                      name="edad"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\NOMBRE_PRODUCTO\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[nombre_producto]"
+                      dataType="wstr"
+                      length="255"
+                      name="nombre_producto" />
+                    <externalMetadataColumn
+                      refId="Package\NOMBRE_PRODUCTO\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[edad]"
+                      dataType="i2"
+                      name="edad" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\NOMBRE_PRODUCTO\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\NOMBRE_PRODUCTO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[edad]"
+                      dataType="i2"
+                      lineageId="Package\NOMBRE_PRODUCTO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[edad]"
+                      name="edad" />
+                    <outputColumn
+                      refId="Package\NOMBRE_PRODUCTO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[nombre_producto]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\NOMBRE_PRODUCTO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[nombre_producto]"
+                      name="nombre_producto" />
+                    <outputColumn
+                      refId="Package\NOMBRE_PRODUCTO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\NOMBRE_PRODUCTO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\NOMBRE_PRODUCTO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\NOMBRE_PRODUCTO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\NOMBRE_PRODUCTO.Paths[Case 1]"
+              endId="Package\NOMBRE_PRODUCTO\Excel Destination.Inputs[Excel Destination Input]"
+              name="Case 1"
+              startId="Package\NOMBRE_PRODUCTO\Conditional Split.Outputs[Case 1]" />
+            <path
+              refId="Package\NOMBRE_PRODUCTO.Paths[OLE DB Source Output]"
+              endId="Package\NOMBRE_PRODUCTO\Conditional Split.Inputs[Conditional Split Input]"
+              name="OLE DB Source Output"
+              startId="Package\NOMBRE_PRODUCTO\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\NOMBRE_SUCURSALES"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{C4EA09DD-D63C-49FA-9A90-EFC33303065D}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="NOMBRE_SUCURSALES"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\NOMBRE_SUCURSALES\Conditional Split"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Conditional Split"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\NOMBRE_SUCURSALES\Conditional Split.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\NOMBRE_SUCURSALES\Conditional Split.Inputs[Conditional Split Input].Columns[nombre_region]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="nombre_region"
+                      lineageId="Package\NOMBRE_SUCURSALES\OLE DB Source.Outputs[OLE DB Source Output].Columns[nombre_region]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\NOMBRE_SUCURSALES\Conditional Split.Outputs[Case 1]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Case 1"
+                  synchronousInputId="Package\NOMBRE_SUCURSALES\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">#{Package\NOMBRE_SUCURSALES\OLE DB Source.Outputs[OLE DB Source Output].Columns[nombre_region]} == "Valparaíso"</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">nombre_region == "Valparaíso"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\NOMBRE_SUCURSALES\Conditional Split.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\NOMBRE_SUCURSALES\Conditional Split.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\NOMBRE_SUCURSALES\Conditional Split.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\NOMBRE_SUCURSALES\Conditional Split.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\NOMBRE_SUCURSALES\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\NOMBRE_SUCURSALES\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\NOMBRE_SUCURSALES\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\NOMBRE_SUCURSALES\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\NOMBRE_SUCURSALES\Destino de ADO NET"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC."
+              name="Destino de ADO NET"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de destino."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."D_Region"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifique el número de filas por lote. El valor predeterminado es 0, que utiliza el mismo tamaño que el búfer interno de SSIS. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si se debe usar la interfaz SqlBulkCopy para mejorar el rendimiento de las operaciones de inserción masiva. No todos los proveedores admiten esta interfaz."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\NOMBRE_SUCURSALES\Destino de ADO NET.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-NER5ACI\SQLPRINCIPAL.DW_Planta.user]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-NER5ACI\SQLPRINCIPAL.DW_Planta.user]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\NOMBRE_SUCURSALES\Destino de ADO NET.Inputs[Entrada de destino de ADO NET]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de ADO NET">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\NOMBRE_SUCURSALES\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[nombre_region]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="nombre_region"
+                      externalMetadataColumnId="Package\NOMBRE_SUCURSALES\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[nombre_region]"
+                      lineageId="Package\NOMBRE_SUCURSALES\OLE DB Source.Outputs[OLE DB Source Output].Columns[nombre_region]" />
+                    <inputColumn
+                      refId="Package\NOMBRE_SUCURSALES\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[nombre_sucursal]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="nombre_sucursal"
+                      externalMetadataColumnId="Package\NOMBRE_SUCURSALES\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[nombre_sucursal]"
+                      lineageId="Package\NOMBRE_SUCURSALES\OLE DB Source.Outputs[OLE DB Source Output].Columns[nombre_sucursal]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\NOMBRE_SUCURSALES\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[nombre_sucursal]"
+                      dataType="wstr"
+                      length="255"
+                      name="nombre_sucursal" />
+                    <externalMetadataColumn
+                      refId="Package\NOMBRE_SUCURSALES\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[nombre_region]"
+                      dataType="wstr"
+                      length="255"
+                      name="nombre_region" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\NOMBRE_SUCURSALES\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de ADO NET"
+                  synchronousInputId="Package\NOMBRE_SUCURSALES\Destino de ADO NET.Inputs[Entrada de destino de ADO NET]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\NOMBRE_SUCURSALES\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\NOMBRE_SUCURSALES\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\NOMBRE_SUCURSALES\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\NOMBRE_SUCURSALES\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\NOMBRE_SUCURSALES\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[D_Sucursal]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT        nombre_region, nombre_sucursal
+FROM            dbo.D_Sucursal
+WHERE        (nombre_region = 'Valparaíso')</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\NOMBRE_SUCURSALES\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-NER5ACI\SQLPRINCIPAL.DW_Planta.user1]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-NER5ACI\SQLPRINCIPAL.DW_Planta.user1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\NOMBRE_SUCURSALES\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\NOMBRE_SUCURSALES\OLE DB Source.Outputs[OLE DB Source Output].Columns[nombre_region]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\NOMBRE_SUCURSALES\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[nombre_region]"
+                      length="255"
+                      lineageId="Package\NOMBRE_SUCURSALES\OLE DB Source.Outputs[OLE DB Source Output].Columns[nombre_region]"
+                      name="nombre_region"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\NOMBRE_SUCURSALES\OLE DB Source.Outputs[OLE DB Source Output].Columns[nombre_sucursal]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\NOMBRE_SUCURSALES\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[nombre_sucursal]"
+                      length="255"
+                      lineageId="Package\NOMBRE_SUCURSALES\OLE DB Source.Outputs[OLE DB Source Output].Columns[nombre_sucursal]"
+                      name="nombre_sucursal"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\NOMBRE_SUCURSALES\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_sucursal]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\NOMBRE_SUCURSALES\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_sucursal]"
+                      lineageId="Package\NOMBRE_SUCURSALES\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_sucursal]"
+                      name="id_sucursal"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\NOMBRE_SUCURSALES\OLE DB Source.Outputs[OLE DB Source Output].Columns[nombre_comuna]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\NOMBRE_SUCURSALES\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[nombre_comuna]"
+                      length="255"
+                      lineageId="Package\NOMBRE_SUCURSALES\OLE DB Source.Outputs[OLE DB Source Output].Columns[nombre_comuna]"
+                      name="nombre_comuna"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\NOMBRE_SUCURSALES\OLE DB Source.Outputs[OLE DB Source Output].Columns[nombre_ciudad]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\NOMBRE_SUCURSALES\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[nombre_ciudad]"
+                      length="255"
+                      lineageId="Package\NOMBRE_SUCURSALES\OLE DB Source.Outputs[OLE DB Source Output].Columns[nombre_ciudad]"
+                      name="nombre_ciudad"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\NOMBRE_SUCURSALES\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[nombre_region]"
+                      dataType="wstr"
+                      length="255"
+                      name="nombre_region" />
+                    <externalMetadataColumn
+                      refId="Package\NOMBRE_SUCURSALES\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[nombre_sucursal]"
+                      dataType="wstr"
+                      length="255"
+                      name="nombre_sucursal" />
+                    <externalMetadataColumn
+                      refId="Package\NOMBRE_SUCURSALES\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_sucursal]"
+                      dataType="i2"
+                      name="id_sucursal" />
+                    <externalMetadataColumn
+                      refId="Package\NOMBRE_SUCURSALES\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[nombre_comuna]"
+                      dataType="wstr"
+                      length="255"
+                      name="nombre_comuna" />
+                    <externalMetadataColumn
+                      refId="Package\NOMBRE_SUCURSALES\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[nombre_ciudad]"
+                      dataType="wstr"
+                      length="255"
+                      name="nombre_ciudad" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\NOMBRE_SUCURSALES\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\NOMBRE_SUCURSALES\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_sucursal]"
+                      dataType="i2"
+                      lineageId="Package\NOMBRE_SUCURSALES\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_sucursal]"
+                      name="id_sucursal" />
+                    <outputColumn
+                      refId="Package\NOMBRE_SUCURSALES\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[nombre_region]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\NOMBRE_SUCURSALES\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[nombre_region]"
+                      name="nombre_region" />
+                    <outputColumn
+                      refId="Package\NOMBRE_SUCURSALES\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[nombre_sucursal]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\NOMBRE_SUCURSALES\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[nombre_sucursal]"
+                      name="nombre_sucursal" />
+                    <outputColumn
+                      refId="Package\NOMBRE_SUCURSALES\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[nombre_comuna]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\NOMBRE_SUCURSALES\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[nombre_comuna]"
+                      name="nombre_comuna" />
+                    <outputColumn
+                      refId="Package\NOMBRE_SUCURSALES\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[nombre_ciudad]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\NOMBRE_SUCURSALES\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[nombre_ciudad]"
+                      name="nombre_ciudad" />
+                    <outputColumn
+                      refId="Package\NOMBRE_SUCURSALES\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\NOMBRE_SUCURSALES\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\NOMBRE_SUCURSALES\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\NOMBRE_SUCURSALES\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\NOMBRE_SUCURSALES.Paths[Case 1]"
+              endId="Package\NOMBRE_SUCURSALES\Destino de ADO NET.Inputs[Entrada de destino de ADO NET]"
+              name="Case 1"
+              startId="Package\NOMBRE_SUCURSALES\Conditional Split.Outputs[Case 1]" />
+            <path
+              refId="Package\NOMBRE_SUCURSALES.Paths[OLE DB Source Output]"
+              endId="Package\NOMBRE_SUCURSALES\Conditional Split.Inputs[Conditional Split Input]"
+              name="OLE DB Source Output"
+              startId="Package\NOMBRE_SUCURSALES\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\PRODUCTOS_CLIENTE"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{7BA44CE5-3E67-44CF-97FD-540E5F23A343}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="PRODUCTOS_CLIENTE"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\PRODUCTOS_CLIENTE\Aggregate"
+              componentClassID="Microsoft.Aggregate"
+              contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
+              name="Aggregate"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                  name="KeyScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                  name="Keys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of distinct values in a column that the aggregation counts distinctly. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no CountDistinctScale value is used."
+                  name="CountDistinctScale"
+                  typeConverter="KeyScaleType">3</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of distinct values in a column that the aggregation counts distinctly. If a CountDistinctScale value is specified, the value in CountDistinctKeys takes precedence."
+                  name="CountDistinctKeys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage by which memory can be extended during the aggregation. Valid values are between 1 and 100."
+                  name="AutoExtendFactor">25</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\PRODUCTOS_CLIENTE\Aggregate.Inputs[Aggregate Input 1]"
+                  name="Aggregate Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\PRODUCTOS_CLIENTE\Aggregate.Inputs[Aggregate Input 1].Columns[cantidad_venta]"
+                      cachedDataType="i4"
+                      cachedName="cantidad_venta"
+                      lineageId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[cantidad_venta]" />
+                    <inputColumn
+                      refId="Package\PRODUCTOS_CLIENTE\Aggregate.Inputs[Aggregate Input 1].Columns[id_cliente]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="id_cliente"
+                      lineageId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_cliente]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\PRODUCTOS_CLIENTE\Aggregate.Outputs[cantidad_ventas]"
+                  name="cantidad_ventas">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PRODUCTOS_CLIENTE\Aggregate.Outputs[cantidad_ventas].Columns[cantidad_venta]"
+                      dataType="i8"
+                      lineageId="Package\PRODUCTOS_CLIENTE\Aggregate.Outputs[cantidad_ventas].Columns[cantidad_venta]"
+                      name="cantidad_venta">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[cantidad_venta]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">4</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PRODUCTOS_CLIENTE\Aggregate.Outputs[cantidad_ventas].Columns[id_cliente]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\PRODUCTOS_CLIENTE\Aggregate.Outputs[cantidad_ventas].Columns[id_cliente]"
+                      name="id_cliente">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_cliente]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\PRODUCTOS_CLIENTE\Conditional Split"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Conditional Split"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\PRODUCTOS_CLIENTE\Conditional Split.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\PRODUCTOS_CLIENTE\Conditional Split.Inputs[Conditional Split Input].Columns[id_cliente]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="id_cliente"
+                      lineageId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_cliente]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\PRODUCTOS_CLIENTE\Conditional Split.Outputs[id_cliente]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="id_cliente"
+                  synchronousInputId="Package\PRODUCTOS_CLIENTE\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">#{Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_cliente]} == "CLI00115"</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">id_cliente == "CLI00115"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\PRODUCTOS_CLIENTE\Conditional Split.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\PRODUCTOS_CLIENTE\Conditional Split.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\PRODUCTOS_CLIENTE\Conditional Split.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\PRODUCTOS_CLIENTE\Conditional Split.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PRODUCTOS_CLIENTE\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\PRODUCTOS_CLIENTE\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\PRODUCTOS_CLIENTE\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\PRODUCTOS_CLIENTE\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\PRODUCTOS_CLIENTE\Flat File Destination"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="2058"
+              name="Flat File Destination"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\PRODUCTOS_CLIENTE\Flat File Destination.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\PRODUCTOS_CLIENTE\Flat File Destination.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\PRODUCTOS_CLIENTE\Flat File Destination.Inputs[Flat File Destination Input].Columns[cantidad_venta]"
+                      cachedDataType="i8"
+                      cachedName="cantidad_venta"
+                      externalMetadataColumnId="Package\PRODUCTOS_CLIENTE\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[cantidad_venta]"
+                      lineageId="Package\PRODUCTOS_CLIENTE\Aggregate.Outputs[cantidad_ventas].Columns[cantidad_venta]" />
+                    <inputColumn
+                      refId="Package\PRODUCTOS_CLIENTE\Flat File Destination.Inputs[Flat File Destination Input].Columns[id_cliente]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="id_cliente"
+                      externalMetadataColumnId="Package\PRODUCTOS_CLIENTE\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[id_cliente]"
+                      lineageId="Package\PRODUCTOS_CLIENTE\Aggregate.Outputs[cantidad_ventas].Columns[id_cliente]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\PRODUCTOS_CLIENTE\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[cantidad_venta]"
+                      dataType="i8"
+                      name="cantidad_venta" />
+                    <externalMetadataColumn
+                      refId="Package\PRODUCTOS_CLIENTE\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[id_cliente]"
+                      dataType="wstr"
+                      length="255"
+                      name="id_cliente" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\PRODUCTOS_CLIENTE\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[H_Venta]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT        id_cliente
+FROM            dbo.H_Venta
+where id_cliente = 'CLI00115'</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-NER5ACI\SQLPRINCIPAL.DW_Planta.user1]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-NER5ACI\SQLPRINCIPAL.DW_Planta.user1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_cliente]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_cliente]"
+                      length="255"
+                      lineageId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_cliente]"
+                      name="id_cliente"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_venta]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_venta]"
+                      lineageId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_venta]"
+                      name="id_venta"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_producto]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_producto]"
+                      length="255"
+                      lineageId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_producto]"
+                      name="id_producto"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_sucursal]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_sucursal]"
+                      lineageId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_sucursal]"
+                      name="id_sucursal"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_vendedor]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_vendedor]"
+                      lineageId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_vendedor]"
+                      name="id_vendedor"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_tiempo]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_tiempo]"
+                      length="50"
+                      lineageId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_tiempo]"
+                      name="id_tiempo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[cantidad_venta]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[cantidad_venta]"
+                      lineageId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[cantidad_venta]"
+                      name="cantidad_venta"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[monto_venta]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[monto_venta]"
+                      lineageId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].Columns[monto_venta]"
+                      name="monto_venta"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_cliente]"
+                      dataType="wstr"
+                      length="255"
+                      name="id_cliente" />
+                    <externalMetadataColumn
+                      refId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_venta]"
+                      dataType="i4"
+                      name="id_venta" />
+                    <externalMetadataColumn
+                      refId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_producto]"
+                      dataType="wstr"
+                      length="255"
+                      name="id_producto" />
+                    <externalMetadataColumn
+                      refId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_sucursal]"
+                      dataType="i2"
+                      name="id_sucursal" />
+                    <externalMetadataColumn
+                      refId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_vendedor]"
+                      dataType="i2"
+                      name="id_vendedor" />
+                    <externalMetadataColumn
+                      refId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_tiempo]"
+                      dataType="wstr"
+                      length="50"
+                      name="id_tiempo" />
+                    <externalMetadataColumn
+                      refId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[cantidad_venta]"
+                      dataType="i4"
+                      name="cantidad_venta" />
+                    <externalMetadataColumn
+                      refId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[monto_venta]"
+                      dataType="i4"
+                      name="monto_venta" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_venta]"
+                      dataType="i4"
+                      lineageId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_venta]"
+                      name="id_venta" />
+                    <outputColumn
+                      refId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_producto]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_producto]"
+                      name="id_producto" />
+                    <outputColumn
+                      refId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_sucursal]"
+                      dataType="i2"
+                      lineageId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_sucursal]"
+                      name="id_sucursal" />
+                    <outputColumn
+                      refId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_cliente]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_cliente]"
+                      name="id_cliente" />
+                    <outputColumn
+                      refId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_vendedor]"
+                      dataType="i2"
+                      lineageId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_vendedor]"
+                      name="id_vendedor" />
+                    <outputColumn
+                      refId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_tiempo]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_tiempo]"
+                      name="id_tiempo" />
+                    <outputColumn
+                      refId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[cantidad_venta]"
+                      dataType="i4"
+                      lineageId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[cantidad_venta]"
+                      name="cantidad_venta" />
+                    <outputColumn
+                      refId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[monto_venta]"
+                      dataType="i4"
+                      lineageId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[monto_venta]"
+                      name="monto_venta" />
+                    <outputColumn
+                      refId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\PRODUCTOS_CLIENTE.Paths[cantidad_ventas]"
+              endId="Package\PRODUCTOS_CLIENTE\Flat File Destination.Inputs[Flat File Destination Input]"
+              name="cantidad_ventas"
+              startId="Package\PRODUCTOS_CLIENTE\Aggregate.Outputs[cantidad_ventas]" />
+            <path
+              refId="Package\PRODUCTOS_CLIENTE.Paths[id_cliente]"
+              endId="Package\PRODUCTOS_CLIENTE\Aggregate.Inputs[Aggregate Input 1]"
+              name="id_cliente"
+              startId="Package\PRODUCTOS_CLIENTE\Conditional Split.Outputs[id_cliente]" />
+            <path
+              refId="Package\PRODUCTOS_CLIENTE.Paths[OLE DB Source Output]"
+              endId="Package\PRODUCTOS_CLIENTE\Conditional Split.Inputs[Conditional Split Input]"
+              name="OLE DB Source Output"
+              startId="Package\PRODUCTOS_CLIENTE\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción]"
+      DTS:CreationName=""
+      DTS:DTSID="{55441D8E-A164-42C9-95FB-E5290676D027}"
+      DTS:From="Package\PRODUCTOS_CLIENTE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción"
+      DTS:To="Package\NOMBRE_SUCURSALES" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{B76B2250-FABB-4B7F-8B0E-0E8B14591C7C}"
+      DTS:From="Package\NOMBRE_SUCURSALES"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 1"
+      DTS:To="Package\NOMBRE_PRODUCTO" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{A5768ADD-A2E3-4737-B0AA-30776DFFA2D3}"
+      DTS:From="Package\LIMPIAR_REGION"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 2"
+      DTS:To="Package\NOMBRE_SUCURSALES" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="196,42"
+          Id="Package\NOMBRE_PRODUCTO"
+          TopLeft="426,269" />
+        <NodeLayout
+          Size="208,42"
+          Id="Package\NOMBRE_SUCURSALES"
+          TopLeft="262,177" />
+        <NodeLayout
+          Size="202,42"
+          Id="Package\PRODUCTOS_CLIENTE"
+          TopLeft="59,95" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="160,137">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="206,40"
+              Start="0,0"
+              End="206,32.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16"
+                    Point2="0,20"
+                    Point3="4,20" />
+                  <mssgle:LineSegment
+                    End="202,20" />
+                  <mssgle:CubicBezierSegment
+                    Point1="202,20"
+                    Point2="206,20"
+                    Point3="206,24" />
+                  <mssgle:LineSegment
+                    End="206,32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 1]"
+          TopLeft="366,219">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="158,50"
+              Start="0,0"
+              End="158,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21"
+                    Point2="0,25"
+                    Point3="4,25" />
+                  <mssgle:LineSegment
+                    End="154,25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="154,25"
+                    Point2="158,25"
+                    Point3="158,29" />
+                  <mssgle:LineSegment
+                    End="158,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="172,42"
+          Id="Package\LIMPIAR_REGION"
+          TopLeft="35,188" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 2]"
+          TopLeft="207,209">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="55,-11"
+              Start="0,0"
+              End="47.5,-11">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="23.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="23.5,0"
+                    Point2="27.5,0"
+                    Point3="27.5,-4" />
+                  <mssgle:LineSegment
+                    End="27.5,-7" />
+                  <mssgle:CubicBezierSegment
+                    Point1="27.5,-7"
+                    Point2="27.5,-11"
+                    Point3="31.5,-11" />
+                  <mssgle:LineSegment
+                    End="47.5,-11" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\NOMBRE_PRODUCTO">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="157,42"
+          Id="Package\NOMBRE_PRODUCTO\OLE DB Source"
+          TopLeft="85,107" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\NOMBRE_PRODUCTO\Conditional Split"
+          TopLeft="327.777777777778,201.111111111111" />
+        <EdgeLayout
+          Id="Package\NOMBRE_PRODUCTO.Paths[OLE DB Source Output]"
+          TopLeft="163.5,149">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="243.777777777778,52.1111111111111"
+              Start="0,0"
+              End="243.777777777778,44.6111111111111">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.0555555555555" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.0555555555555"
+                    Point2="0,26.0555555555555"
+                    Point3="4,26.0555555555555" />
+                  <mssgle:LineSegment
+                    End="239.777777777778,26.0555555555555" />
+                  <mssgle:CubicBezierSegment
+                    Point1="239.777777777778,26.0555555555555"
+                    Point2="243.777777777778,26.0555555555555"
+                    Point3="243.777777777778,30.0555555555555" />
+                  <mssgle:LineSegment
+                    End="243.777777777778,44.6111111111111" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="164,42"
+          Id="Package\NOMBRE_PRODUCTO\Excel Destination"
+          TopLeft="325.555555555556,336.666666666667" />
+        <EdgeLayout
+          Id="Package\NOMBRE_PRODUCTO.Paths[Case 1]"
+          TopLeft="407.416666666667,243.111111111111">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,93.5555555555555"
+              Start="0,0"
+              End="0,86.0555555555555">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,86.0555555555555" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-15.2180859375,38.2509223090278,30.436171875,9.5537109375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\NOMBRE_PRODUCTO\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\NOMBRE_SUCURSALES">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="157,42"
+          Id="Package\NOMBRE_SUCURSALES\OLE DB Source"
+          TopLeft="120,95" />
+        <NodeLayout
+          Size="183,42"
+          Id="Package\NOMBRE_SUCURSALES\Destino de ADO NET"
+          TopLeft="346,284" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\NOMBRE_SUCURSALES\Conditional Split"
+          TopLeft="450,136.666666666667" />
+        <EdgeLayout
+          Id="Package\NOMBRE_SUCURSALES.Paths[OLE DB Source Output]"
+          TopLeft="277,116">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="173,41.6666666666667"
+              Start="0,0"
+              End="165.5,41.6666666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="82.4999999999999,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="82.4999999999999,0"
+                    Point2="86.4999999999999,0"
+                    Point3="86.4999999999999,4" />
+                  <mssgle:LineSegment
+                    End="86.4999999999999,37.6666666666667" />
+                  <mssgle:CubicBezierSegment
+                    Point1="86.4999999999999,37.6666666666667"
+                    Point2="86.4999999999999,41.6666666666667"
+                    Point3="90.4999999999999,41.6666666666667" />
+                  <mssgle:LineSegment
+                    End="165.5,41.6666666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\NOMBRE_SUCURSALES.Paths[Case 1]"
+          TopLeft="529.5,178.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-91.9999999999999,105.333333333333"
+              Start="0,0"
+              End="-91.9999999999999,97.8333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.6666666666666" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,48.6666666666666"
+                    Point2="0,52.6666666666666"
+                    Point3="-4,52.6666666666666" />
+                  <mssgle:LineSegment
+                    End="-87.9999999999999,52.6666666666666" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-87.9999999999999,52.6666666666666"
+                    Point2="-91.9999999999999,52.6666666666666"
+                    Point3="-91.9999999999999,56.6666666666666" />
+                  <mssgle:LineSegment
+                    End="-91.9999999999999,97.8333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-61.2180859374999,57.6666666666666,30.436171875,9.5537109375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\NOMBRE_SUCURSALES\Destino de ADO NET">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\NOMBRE_SUCURSALES\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\PRODUCTOS_CLIENTE">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="157,42"
+          Id="Package\PRODUCTOS_CLIENTE\OLE DB Source"
+          TopLeft="105,49" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\PRODUCTOS_CLIENTE\Aggregate"
+          TopLeft="225,155" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\PRODUCTOS_CLIENTE\Conditional Split"
+          TopLeft="434,128" />
+        <EdgeLayout
+          Id="Package\PRODUCTOS_CLIENTE.Paths[OLE DB Source Output]"
+          TopLeft="183.5,91">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="330,37"
+              Start="0,0"
+              End="330,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.5"
+                    Point2="0,18.5"
+                    Point3="4,18.5" />
+                  <mssgle:LineSegment
+                    End="326,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="326,18.5"
+                    Point2="330,18.5"
+                    Point3="330,22.5" />
+                  <mssgle:LineSegment
+                    End="330,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="176,42"
+          Id="Package\PRODUCTOS_CLIENTE\Flat File Destination"
+          TopLeft="380,265" />
+        <EdgeLayout
+          Id="Package\PRODUCTOS_CLIENTE.Paths[cantidad_ventas]"
+          TopLeft="290,197">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="178,68"
+              Start="0,0"
+              End="178,60.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30"
+                    Point2="0,34"
+                    Point3="4,34" />
+                  <mssgle:LineSegment
+                    End="174,34" />
+                  <mssgle:CubicBezierSegment
+                    Point1="174,34"
+                    Point2="178,34"
+                    Point3="178,38" />
+                  <mssgle:LineSegment
+                    End="178,60.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\PRODUCTOS_CLIENTE.Paths[id_cliente]"
+          TopLeft="434,149">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-79,27"
+              Start="0,0"
+              End="-71.5,27">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-35.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-35.5,0"
+                    Point2="-39.5,0"
+                    Point3="-39.5,4" />
+                  <mssgle:LineSegment
+                    End="-39.5,23" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-39.5,23"
+                    Point2="-39.5,27"
+                    Point3="-43.5,27" />
+                  <mssgle:LineSegment
+                    End="-71.5,27" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-61.01494140625,-17.0625,43.0298828125,11.0625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\PRODUCTOS_CLIENTE\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
