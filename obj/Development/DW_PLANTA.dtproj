@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-NER5ACI</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAEvytyL2VRE+CLp25qNzAUwAAAAACAAAAAAAQZgAAAAEAACAAAAD3+DyxJjHo9K1gO2fPxmBTOcExYiArRmSkdJYWFktflQAAAAAOgAAAAAIAACAAAADwTuK4eC5qoBqjLas9YG2AD3ST5/5nHru2QDyUag4tVJAAAAAaXvhyhU5Wx3ui3RS2xrP73ZUTru3X5WT7MY3NhvsWNKpM+A3jMgsYofOPwgZA0KVoNZVOHEU1BLMbeUUU+oEj9nPXKOgFg+pL/opl0FNsRGa/blb0JVWoqqBI25WfRpRS3mWFOQPe3qX8Wqd+4t62cQGQtwKg8TmHLLSj7A81p4kUvjr5tiD2ePnpVIKFBWlAAAAAxR/lK47oX8N2vI0JhVLApamrvvRMUVvOiZlifk9w2/io+qH9u3WODytww7SEDUGmYlmRTW6IBb4hKNf4j5IGQg==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAEvytyL2VRE+CLp25qNzAUwAAAAACAAAAAAAQZgAAAAEAACAAAABGoLBB5Q6dMhj17/9yZkzgCZhDKZvEkLnvR/vAOWqPZwAAAAAOgAAAAAIAACAAAACmqXQUuk5UTNVfkRN8P5EDnco1NeEEfodUFVVIzmCDn5AAAADLtZMobqr9IL1tg9OZ/8hKb+FmTbXNXJOFvp+sJOmrFF4Q33mxv3dxGCAVUIbM8DiEk+JGv56G0zaZtzqFwbdydGbHGtnnVxpbxV+gxWJl/K7ZWNikIumKKrGK0tySfOiW9cORyrrB1NXsK4eNGK0uiHKEUolfSKkg9MvSAvSNlPR4HebDrUnQ5Cnu81j5rndAAAAASBSZ6cwlrW57ro0uLbNRe8VbBviLPbF5VhBU1plTiYi50C7+cAExLm7+bf8vqOkeElA1KZ8EItv2G4WxQrYWDA==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -1141,10 +1141,10 @@
                 <SSIS:Property SSIS:Name="Name">practica_2-3</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">42</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">53</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{8DBC1E34-B294-4FA3-8AC5-3AE39CDD9A99}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{9D3F0F59-B4C9-43B0-94A3-44818F40C3BC}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1177,7 +1177,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">Provider=Microsoft.ACE.OLEDB.16.0;Data Source=C:\Users\josep\source\repos\DW_PLANTA\archivos\nombres_productos.xlsx;Extended Properties="EXCEL 12.0 XML;HDR=YES";</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">Provider=Microsoft.ACE.OLEDB.16.0;Data Source=C:\Users\josep\source\repos\DW_PLANTA\archivos\productos.xls;Extended Properties="EXCEL 12.0 XML;HDR=YES";</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -1192,7 +1192,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">C:\Users\josep\source\repos\DW_PLANTA\archivos\nombres_productos.xlsx</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">C:\Users\josep\source\repos\DW_PLANTA\archivos\productos.xls</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -1265,7 +1265,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">C:\Users\josep\source\repos\DW_PLANTA\archivos\nombres_productos.xlsx</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">C:\Users\josep\source\repos\DW_PLANTA\archivos\productos.xls</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>

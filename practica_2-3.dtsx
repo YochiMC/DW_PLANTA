@@ -11,21 +11,21 @@
   DTS:LocaleID="2058"
   DTS:ObjectName="practica_2-3"
   DTS:PackageType="5"
-  DTS:VersionBuild="42"
-  DTS:VersionGUID="{8DBC1E34-B294-4FA3-8AC5-3AE39CDD9A99}">
+  DTS:VersionBuild="57"
+  DTS:VersionGUID="{9C75DBBB-25D1-4EF8-8DD2-95656D371D82}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Administrador de conexiones con Excel]"
       DTS:CreationName="EXCEL"
-      DTS:DTSID="{64B8E37A-6FEB-41F3-B8F1-F5354E967D38}"
+      DTS:DTSID="{4596191F-4C48-4559-94F5-3B084A83F70D}"
       DTS:ObjectName="Administrador de conexiones con Excel">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=C:\Users\josep\source\repos\DW_PLANTA\archivos\nombres_productos.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=C:\Users\josep\source\repos\DW_PLANTA\archivos\productos.xls;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -39,7 +39,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAEvytyL2VRE+CLp25qNzAUwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADzRO6z51CKY4e3hyUMoHsg7JEe7eW/Vw+JRcOQFKCdKQAAAAAOgAAAAAIAACAAAAAffENlz4+y8s+u6R/G7W5PYiaTOK3g4C9Y1fRy8JkV0xAAAAA4yDR6c84P6PlV0ITZNpkNQAAAALKEUPSOXYKgBSXIDtCl+6AO82SijfRWXmQZS8aDEK3g8B2wzuM70qfLOHtOe2pYOpVwSIQOwPhcgU3Le3FWU4I</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAEvytyL2VRE+CLp25qNzAUwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACd9U9VQabzjDKqIknyoKf683q8XEl5Kjm1fJjjcufQ1QAAAAAOgAAAAAIAACAAAACm83JyTRUl3GjCRkzsgASlaCyIJuQXU0/WODv1kSnBShAAAADgh83z50oCdfHYtDOzDkRFQAAAAB9jSgNMWrSzJCrwLJ4HxlCfTU9ugknO5L07pxPCjkW+ftcQCdBpcmSbM76ANDZtx0NMWPxmpjOu6QWKkXCQj3c</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -56,7 +56,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAEvytyL2VRE+CLp25qNzAUwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAB5v6t37Ho+7m4bDTurDzun4Fsf/3F7mXX+th6YKAsCQAAAAAOgAAAAAIAACAAAADGxpL+A+ns2flVYft/Zuyzyi78ScAsj7oTnGVJQhK1FhAAAABXX8YfbBifvYnbtmobhP62QAAAADe/fPARYJXlz8zmXAyYYERNMuqw/6p+VrGa4FVtzp/+xMb8kGo54Yvh/VPEdbrH/1XIi0bpTT1wCcCJF+KFOlg</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAEvytyL2VRE+CLp25qNzAUwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACeHqGORIa5ASlLBqK7qXgfGDBSHySs01rg564tWFri6QAAAAAOgAAAAAIAACAAAAAeAzyqGTypjgavJCV3IK91+0u4b2r1mclMXva7f89KJxAAAACoZoEstRfilW6RKFmxLWLRQAAAAAyQXJD46P4pwUxCvUyFjWB0VOodTf/Y190QSRau8Vj/7E0bzRxf46dVjb5xK1l0Z8lSsN4aXikpCAFcl+wI9Ig</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -234,7 +234,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset"></property>
+                  name="OpenRowset">nombres_productos</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -269,6 +269,8 @@
               <connections>
                 <connection
                   refId="Package\NOMBRE_PRODUCTO\Excel Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Administrador de conexiones con Excel]"
+                  connectionManagerRefId="Package.ConnectionManagers[Administrador de conexiones con Excel]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -279,8 +281,24 @@
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="Excel Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\NOMBRE_PRODUCTO\Excel Destination.Inputs[Excel Destination Input].Columns[nombre_producto]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="nombre_producto"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\NOMBRE_PRODUCTO\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[nombre_producto]"
+                      lineageId="Package\NOMBRE_PRODUCTO\Sort.Outputs[Sort Output].Columns[nombre_producto]" />
+                  </inputColumns>
                   <externalMetadataColumns
-                    isUsed="True" />
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\NOMBRE_PRODUCTO\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[nombre_producto]"
+                      dataType="wstr"
+                      length="255"
+                      name="nombre_producto" />
+                  </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
@@ -438,11 +456,110 @@ FROM            dbo.D_Cliente INNER JOIN
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\NOMBRE_PRODUCTO\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\NOMBRE_PRODUCTO\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\NOMBRE_PRODUCTO\Sort.Inputs[Sort Input].Columns[nombre_producto]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="nombre_producto"
+                      lineageId="Package\NOMBRE_PRODUCTO\OLE DB Source.Outputs[OLE DB Source Output].Columns[nombre_producto]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\NOMBRE_PRODUCTO\Sort.Inputs[Sort Input].Columns[edad]"
+                      cachedDataType="i2"
+                      cachedName="edad"
+                      lineageId="Package\NOMBRE_PRODUCTO\OLE DB Source.Outputs[OLE DB Source Output].Columns[edad]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\NOMBRE_PRODUCTO\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\NOMBRE_PRODUCTO\Sort.Outputs[Sort Output].Columns[nombre_producto]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\NOMBRE_PRODUCTO\Sort.Outputs[Sort Output].Columns[nombre_producto]"
+                      name="nombre_producto"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\NOMBRE_PRODUCTO\OLE DB Source.Outputs[OLE DB Source Output].Columns[nombre_producto]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NOMBRE_PRODUCTO\Sort.Outputs[Sort Output].Columns[edad]"
+                      dataType="i2"
+                      lineageId="Package\NOMBRE_PRODUCTO\Sort.Outputs[Sort Output].Columns[edad]"
+                      name="edad">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\NOMBRE_PRODUCTO\OLE DB Source.Outputs[OLE DB Source Output].Columns[edad]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
             <path
               refId="Package\NOMBRE_PRODUCTO.Paths[Case 1]"
-              endId="Package\NOMBRE_PRODUCTO\Excel Destination.Inputs[Excel Destination Input]"
+              endId="Package\NOMBRE_PRODUCTO\Sort.Inputs[Sort Input]"
               name="Case 1"
               startId="Package\NOMBRE_PRODUCTO\Conditional Split.Outputs[Case 1]" />
             <path
@@ -450,6 +567,11 @@ FROM            dbo.D_Cliente INNER JOIN
               endId="Package\NOMBRE_PRODUCTO\Conditional Split.Inputs[Conditional Split Input]"
               name="OLE DB Source Output"
               startId="Package\NOMBRE_PRODUCTO\OLE DB Source.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\NOMBRE_PRODUCTO.Paths[Sort Output]"
+              endId="Package\NOMBRE_PRODUCTO\Excel Destination.Inputs[Excel Destination Input]"
+              name="Sort Output"
+              startId="Package\NOMBRE_PRODUCTO\Sort.Outputs[Sort Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -1428,6 +1550,21 @@ where id_cliente = 'CLI00115'</property>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SALER"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{0B6EE2EF-DDBA-467B-9CB6-6177EA18DEBA}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SALER"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1" />
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
@@ -1454,6 +1591,14 @@ where id_cliente = 'CLI00115'</property>
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restricción 2"
       DTS:To="Package\NOMBRE_SUCURSALES" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{C32D7822-1F4A-4396-BC01-C00001370CFB}"
+      DTS:From="Package\NOMBRE_PRODUCTO"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 3"
+      DTS:To="Package\SALER" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
@@ -1466,22 +1611,26 @@ where id_cliente = 'CLI00115'</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="172,42"
+          Id="Package\LIMPIAR_REGION"
+          TopLeft="32.1428571428571,113.714285714286" />
         <NodeLayout
           Size="196,42"
           Id="Package\NOMBRE_PRODUCTO"
-          TopLeft="426,269" />
+          TopLeft="423.142857142857,194.714285714286" />
         <NodeLayout
           Size="208,42"
           Id="Package\NOMBRE_SUCURSALES"
-          TopLeft="262,177" />
+          TopLeft="259.142857142857,102.714285714286" />
         <NodeLayout
           Size="202,42"
           Id="Package\PRODUCTOS_CLIENTE"
-          TopLeft="59,95" />
+          TopLeft="56.1428571428571,20.7142857142857" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción]"
-          TopLeft="160,137">
+          TopLeft="157.142857142857,62.7142857142857">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1515,7 +1664,7 @@ where id_cliente = 'CLI00115'</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 1]"
-          TopLeft="366,219">
+          TopLeft="363.142857142857,144.714285714286">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1547,13 +1696,9 @@ where id_cliente = 'CLI00115'</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="172,42"
-          Id="Package\LIMPIAR_REGION"
-          TopLeft="35,188" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 2]"
-          TopLeft="207,209">
+          TopLeft="204.142857142857,134.714285714286">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1585,6 +1730,44 @@ where id_cliente = 'CLI00115'</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="115,42"
+          Id="Package\SALER"
+          TopLeft="585.714285714286,288.571428571429" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 3]"
+          TopLeft="521.142857142857,236.714285714286">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="122.071428571429,51.8571428571428"
+              Start="0,0"
+              End="122.071428571429,44.3571428571428">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.9285714285714" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.9285714285714"
+                    Point2="0,25.9285714285714"
+                    Point3="4,25.9285714285714" />
+                  <mssgle:LineSegment
+                    End="118.071428571429,25.9285714285714" />
+                  <mssgle:CubicBezierSegment
+                    Point1="118.071428571429,25.9285714285714"
+                    Point2="122.071428571429,25.9285714285714"
+                    Point3="122.071428571429,29.9285714285714" />
+                  <mssgle:LineSegment
+                    End="122.071428571429,44.3571428571428" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -1594,39 +1777,35 @@ where id_cliente = 'CLI00115'</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="99,42"
+          Id="Package\NOMBRE_PRODUCTO\Sort"
+          TopLeft="386.5,226" />
+        <NodeLayout
           Size="157,42"
           Id="Package\NOMBRE_PRODUCTO\OLE DB Source"
           TopLeft="85,107" />
         <NodeLayout
           Size="159,42"
           Id="Package\NOMBRE_PRODUCTO\Conditional Split"
-          TopLeft="327.777777777778,201.111111111111" />
+          TopLeft="90.277777777778,217.361111111111" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\NOMBRE_PRODUCTO\Excel Destination"
+          TopLeft="227.5,314.25" />
         <EdgeLayout
           Id="Package\NOMBRE_PRODUCTO.Paths[OLE DB Source Output]"
-          TopLeft="163.5,149">
+          TopLeft="166.638888888889,149">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="243.777777777778,52.1111111111111"
+              EndConnector="0,68.361111111111"
               Start="0,0"
-              End="243.777777777778,44.6111111111111">
+              End="0,60.861111111111">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.0555555555555" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,22.0555555555555"
-                    Point2="0,26.0555555555555"
-                    Point3="4,26.0555555555555" />
-                  <mssgle:LineSegment
-                    End="239.777777777778,26.0555555555555" />
-                  <mssgle:CubicBezierSegment
-                    Point1="239.777777777778,26.0555555555555"
-                    Point2="243.777777777778,26.0555555555555"
-                    Point3="243.777777777778,30.0555555555555" />
-                  <mssgle:LineSegment
-                    End="243.777777777778,44.6111111111111" />
+                    End="0,60.861111111111" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1635,32 +1814,74 @@ where id_cliente = 'CLI00115'</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="164,42"
-          Id="Package\NOMBRE_PRODUCTO\Excel Destination"
-          TopLeft="325.555555555556,336.666666666667" />
         <EdgeLayout
           Id="Package\NOMBRE_PRODUCTO.Paths[Case 1]"
-          TopLeft="407.416666666667,243.111111111111">
+          TopLeft="249.277777777778,238.361111111111">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,93.5555555555555"
+              EndConnector="137.222222222222,8.638888888889"
               Start="0,0"
-              End="0,86.0555555555555">
+              End="129.722222222222,8.638888888889">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,86.0555555555555" />
+                    End="64.611111111111,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="64.611111111111,0"
+                    Point2="68.611111111111,0"
+                    Point3="68.611111111111,4" />
+                  <mssgle:LineSegment
+                    End="68.611111111111,4.638888888889" />
+                  <mssgle:CubicBezierSegment
+                    Point1="68.611111111111,4.638888888889"
+                    Point2="68.611111111111,8.638888888889"
+                    Point3="72.611111111111,8.638888888889" />
+                  <mssgle:LineSegment
+                    End="129.722222222222,8.638888888889" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-15.2180859375,38.2509223090278,30.436171875,9.5537109375"
+              BoundingBox="53.393025173611,-15.5537109375,30.436171875,9.5537109375"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\NOMBRE_PRODUCTO.Paths[Sort Output]"
+          TopLeft="436,268">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-126.5,46.25"
+              Start="0,0"
+              End="-126.5,38.75">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.125" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.125"
+                    Point2="0,23.125"
+                    Point3="-4,23.125" />
+                  <mssgle:LineSegment
+                    End="-122.5,23.125" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-122.5,23.125"
+                    Point2="-126.5,23.125"
+                    Point3="-126.5,27.125" />
+                  <mssgle:LineSegment
+                    End="-126.5,38.75" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -1674,11 +1895,28 @@ where id_cliente = 'CLI00115'</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\NOMBRE_PRODUCTO\Excel Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\NOMBRE_SUCURSALES">
     <LayoutInfo>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="159,42"
+          Id="Package\NOMBRE_SUCURSALES\Conditional Split"
+          TopLeft="450,136.666666666667" />
         <NodeLayout
           Size="157,42"
           Id="Package\NOMBRE_SUCURSALES\OLE DB Source"
@@ -1687,10 +1925,6 @@ where id_cliente = 'CLI00115'</property>
           Size="183,42"
           Id="Package\NOMBRE_SUCURSALES\Destino de ADO NET"
           TopLeft="346,284" />
-        <NodeLayout
-          Size="159,42"
-          Id="Package\NOMBRE_SUCURSALES\Conditional Split"
-          TopLeft="450,136.666666666667" />
         <EdgeLayout
           Id="Package\NOMBRE_SUCURSALES.Paths[OLE DB Source Output]"
           TopLeft="277,116">
@@ -1722,7 +1956,9 @@ where id_cliente = 'CLI00115'</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1765,14 +2001,6 @@ where id_cliente = 'CLI00115'</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\NOMBRE_SUCURSALES\Destino de ADO NET">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\NOMBRE_SUCURSALES\OLE DB Source">
     <Properties>
       <Property>
@@ -1782,6 +2010,14 @@ where id_cliente = 'CLI00115'</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\NOMBRE_SUCURSALES\Destino de ADO NET">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -1795,13 +2031,17 @@ where id_cliente = 'CLI00115'</property>
           Id="Package\PRODUCTOS_CLIENTE\OLE DB Source"
           TopLeft="105,49" />
         <NodeLayout
+          Size="159,42"
+          Id="Package\PRODUCTOS_CLIENTE\Conditional Split"
+          TopLeft="434,128" />
+        <NodeLayout
           Size="130,42"
           Id="Package\PRODUCTOS_CLIENTE\Aggregate"
           TopLeft="225,155" />
         <NodeLayout
-          Size="159,42"
-          Id="Package\PRODUCTOS_CLIENTE\Conditional Split"
-          TopLeft="434,128" />
+          Size="176,42"
+          Id="Package\PRODUCTOS_CLIENTE\Flat File Destination"
+          TopLeft="380,265" />
         <EdgeLayout
           Id="Package\PRODUCTOS_CLIENTE.Paths[OLE DB Source Output]"
           TopLeft="183.5,91">
@@ -1828,44 +2068,6 @@ where id_cliente = 'CLI00115'</property>
                     Point3="330,22.5" />
                   <mssgle:LineSegment
                     End="330,29.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="176,42"
-          Id="Package\PRODUCTOS_CLIENTE\Flat File Destination"
-          TopLeft="380,265" />
-        <EdgeLayout
-          Id="Package\PRODUCTOS_CLIENTE.Paths[cantidad_ventas]"
-          TopLeft="290,197">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="178,68"
-              Start="0,0"
-              End="178,60.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,30"
-                    Point2="0,34"
-                    Point3="4,34" />
-                  <mssgle:LineSegment
-                    End="174,34" />
-                  <mssgle:CubicBezierSegment
-                    Point1="174,34"
-                    Point2="178,34"
-                    Point3="178,38" />
-                  <mssgle:LineSegment
-                    End="178,60.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1908,6 +2110,40 @@ where id_cliente = 'CLI00115'</property>
             <mssgm:EdgeLabel
               BoundingBox="-61.01494140625,-17.0625,43.0298828125,11.0625"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\PRODUCTOS_CLIENTE.Paths[cantidad_ventas]"
+          TopLeft="290,197">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="178,68"
+              Start="0,0"
+              End="178,60.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30"
+                    Point2="0,34"
+                    Point3="4,34" />
+                  <mssgle:LineSegment
+                    End="174,34" />
+                  <mssgle:CubicBezierSegment
+                    Point1="174,34"
+                    Point2="178,34"
+                    Point3="178,38" />
+                  <mssgle:LineSegment
+                    End="178,60.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
